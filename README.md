@@ -2,6 +2,10 @@
 
 Test befinden sich in `/src/stores` & `cypress/e2e`
 
+Link zur Anwendung: https://myposter.kidzki.dev 
+
+Falls Probleme dann CORS-Bypass verwenden => https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf 
+
 # myposter-frontend
 
 This template should help get you started developing with Vue 3 in Vite.

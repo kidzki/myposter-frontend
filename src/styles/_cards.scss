@@ -1,0 +1,28 @@
+.card {
+  background-color: var(--mp-text-white);
+  border-radius: 0.33rem;
+  overflow: hidden;
+  &__title {
+    min-height: 40px;
+  }
+  &__header {
+    &--picture {
+      width: 100%;
+      max-height: auto;
+    }
+  }
+}
+
+.title {
+  &__initials {
+    align-items: center;
+    display: flex;
+    font-size: 1.25rem;
+    justify-content: center;
+    background-color: var(--mp-primary-variant);
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    text-transform: uppercase;
+  }
+}

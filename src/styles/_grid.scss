@@ -1,0 +1,83 @@
+@use 'variables' as *;
+
+// Variable für die Anzahl der Spalten
+$grid-columns: 3;
+
+// Variable für den Abstand zwischen den Spalten
+$grid-gutter: 20px;
+
+// Funktion für die Breite einer Spalte
+@function grid-width($num-columns) {
+  @return calc(($num-columns / $grid-columns) * 100%);
+}
+
+@mixin respond-to-breakpoint($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media only screen and (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  }
+}
+
+// Mixin für den Container
+@mixin grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: $grid-gutter;
+
+  &--searchbar {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  // Media Queries für verschiedene Bildschirmgrößen
+  @include respond-to-breakpoint(small) {
+    grid-template-columns: repeat(2, 1fr);
+    &--searchbar {
+      gap: 0;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+
+  @include respond-to-breakpoint(medium) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: $grid-gutter;
+    &--searchbar {
+      grid-template-columns: 1.25fr 0.5fr 1.25fr;
+    }
+  }
+
+  @include respond-to-breakpoint(large) {
+    grid-template-columns: repeat(3, 1fr);
+    &--searchbar {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// Mixin für die Spalten
+@mixin grid-column($num-columns) {
+  grid-column: span $num-columns;
+
+  // Abstand zwischen den Spalten
+  padding-right: $grid-gutter;
+  padding-left: $grid-gutter;
+}
+
+// Beispielanwendung
+.container {
+  @include grid-container;
+
+  @for $i from 2 to $grid-columns {
+    .col-#{$i} {
+      @include grid-column($i);
+    }
+  }
+}

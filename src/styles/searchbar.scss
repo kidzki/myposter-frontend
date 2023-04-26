@@ -1,0 +1,45 @@
+.searchbar {
+  background-color: var(--mp-text-white);
+  padding: 20px 0;
+  border-radius: 10px;
+  position: inherit;
+  top: 50%;
+
+  &__text-filter {
+    margin: auto 20px;
+  }
+  &__dropdown-filter {
+    margin: auto 20px;
+    @include respond-to-breakpoint(medium) {
+      margin: auto;
+    }
+  }
+  &__latest-filter {
+    margin: auto 20px;
+    @include respond-to-breakpoint(medium) {
+      display: flex;
+      justify-content: flex-end;
+      vertical-align: center;
+      margin: auto 20px;
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  padding: 20px;
+  height: 100%;
+  max-width: 920px;
+  margin: auto;
+
+  &__headline {
+    position: relative;
+    top: 20%;
+  }
+}
+
+.text-filter {
+  &__icon {
+    height: 35px;
+  }
+}

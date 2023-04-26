@@ -1,0 +1,29 @@
+.input,
+.select {
+  font-size: 14px;
+  border: none;
+  color: var(--mp-text-accent);
+  outline: none;
+
+  &::placeholder {
+    color: var(--mp-text-accent);
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  &::hover,
+  &::focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.checkbox {
+  border: none;
+}
+
+.label {
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--mp-text-accent);
+}

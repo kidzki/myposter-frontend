@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+body {
+  background-color: var(--mp-background);
+  font-family: 'lato', 'sans-serif';
+}
+
+main {
+  padding-bottom: 75px;
+  margin-top: 150px;
+  @include respond-to-breakpoint(medium) {
+    margin-top: 100px;
+  }
+}

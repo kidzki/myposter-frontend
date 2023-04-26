@@ -1,0 +1,16 @@
+:root {
+  --mp-primary: #00a4e0;
+  --mp-primary-variant: #0d81b3;
+  --mp-background: #eee;
+  --mp-text-default: #272727;
+  --mp-text-accent: #888888;
+  --mp-text-white: #fff;
+}
+
+// Variable für Breakpoints
+$breakpoints: (
+  xsmall: 320px,
+  small: 576px,
+  medium: 720px,
+  large: 920px
+);

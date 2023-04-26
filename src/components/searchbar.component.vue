@@ -43,9 +43,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { mapActions } from 'pinia'
 import { useArticlesStore } from '@/stores/dev-articles'
+import type Filter from '@/interfaces/filter.interface'
 export default {
   title: 'searchbar',
   data() {
@@ -58,7 +59,7 @@ export default {
   methods: {
     ...mapActions(useArticlesStore, ['getFilteredData']),
     getFilterSettings() {
-      const filters = {
+      const filters:Filter = {
         filterByText: this.filterTextValue,
         filterByCurrentYear: this.filterLatestValue,
         sortBy: this.sortByValue

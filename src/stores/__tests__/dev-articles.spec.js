@@ -3,7 +3,6 @@ import { setActivePinia, createPinia } from 'pinia'
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { useArticlesStore } from '@/stores/dev-articles.ts'
 import * as ApiResponseMock from '@/assets/mocks/api-response.json'
-import type Filter from '@/interfaces/filter.interface'
 
 global.fetch = vi.fn()
 
@@ -36,7 +35,7 @@ describe('Filtering', () => {
   it('should filter by text', async () => {
     const store = useArticlesStore()
     const ArticlesApiResponse = ApiResponseMock
-    const filter: Filter = {
+    const filter = {
       filterByText: 'cypress',
       filterByCurrentYear: false,
       sortBy: ''
@@ -49,7 +48,7 @@ describe('Filtering', () => {
     it('should filter by latest Date', async () => {
       const store = useArticlesStore()
       const ArticlesApiResponse = ApiResponseMock
-      const filter: Filter = {
+      const filter = {
         filterByText: '',
         filterByCurrentYear: true,
         sortBy: ''
@@ -62,7 +61,7 @@ describe('Filtering', () => {
     it('should sort by author name', async () => {
       const store = useArticlesStore()
       const ArticlesApiResponse = ApiResponseMock
-      const filter: Filter = {
+      const filter = {
         filterByText: '',
         filterByCurrentYear: false,
         sortBy: 'author'
@@ -76,7 +75,7 @@ describe('Filtering', () => {
     it('should sort by asce date', async () => {
       const store = useArticlesStore()
       const ArticlesApiResponse = ApiResponseMock
-      const filter: Filter = {
+      const filter = {
         filterByText: '',
         filterByCurrentYear: false,
         sortBy: 'asce_date'
@@ -91,7 +90,7 @@ describe('Filtering', () => {
   it('should sort by desc date', async () => {
     const store = useArticlesStore()
     const ArticlesApiResponse = ApiResponseMock
-    const filter: Filter = {
+    const filter = {
       filterByText: '',
       filterByCurrentYear: false,
       sortBy: 'desc_date'

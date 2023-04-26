@@ -4,7 +4,7 @@
       <p class="title__initials m-0 text--white">{{ getInitials }}</p>
     </div>
     <div class="ml-2">
-      <p class="text--bold mb-0 line-height--15">{{ this.author }}</p>
+      <p class="text--bold mb-0 line-height--15">{{ author }}</p>
       <p class="text--light mt-0 text--accent line-height--15">{{ getFormatedDate }}</p>
     </div>
   </div>
@@ -15,11 +15,11 @@ export default {
   props: {
     author: {
       type: String,
-      required: false
+      default: 'No Name'
     },
     date: {
       type: String,
-      required: false
+      default: ''
     }
   },
 
